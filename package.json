@@ -1,0 +1,27 @@
+{
+  "name": "ang-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdkay/ang-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdkay/ang-app/issues"
+  },
+  "homepage": "https://github.com/bdkay/ang-app#readme",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.1",
+    "grunt-express": "^1.4.1",
+    "grunt-express-server": "^0.5.4"
+  },
+  "dependencies": {},
+  "description": ""
+}

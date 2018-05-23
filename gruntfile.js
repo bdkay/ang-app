@@ -1,4 +1,5 @@
 module.exports = function(grunt){
+	var serveStatic = require('serve-static');
 	grunt.initConfig({
 		pkg:grunt.file.readJSON('package.json'),
 
@@ -16,7 +17,16 @@ module.exports = function(grunt){
 					livereload:true
 				}
 			}
-		}
+		},
+		middleware: function(connect, options) {
+      var middlewares;
+      middlewares = [];
+      middlewares.push( modRewrite( ['^[^\\.]*$ /index.html [L]'] ) );
+      options.base.forEach( function( base ) {
+        return middlewares.push( serveStatic( base ) );
+      });
+      return middlewares;
+    }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');

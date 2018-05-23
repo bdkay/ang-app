@@ -21,7 +21,8 @@
     "grunt-contrib-watch": "^1.0.1",
     "grunt-express": "^1.4.1",
     "grunt-express-server": "^0.5.4",
-    "grunt-parallel": "^0.5.1"
+    "grunt-parallel": "^0.5.1",
+    "serve-static": "^1.13.2"
   },
   "dependencies": {},
   "description": ""

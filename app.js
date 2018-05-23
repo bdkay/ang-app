@@ -1,16 +1,14 @@
 // // MODULE
-// var angularApp = angular.module('angularApp', []);
+// var myApp = angular.module('myApp', []);
 
 // // CONTROLLERS
-// angularApp.controller('mainController', ['$scope', function ($scope) {
-    
+// myApp.controller('mainController', ['$scope', function ($scope) {
+
 // }]);
 
 
-var angularApp = angular.module('angularApp', []);
+var myApp = angular.module('myApp', []);
 
-angularApp.controller('mainController',['$scope',function($scope){
+myApp.controller('mainController', ['$scope', function($scope){
 
 }]);
-
-

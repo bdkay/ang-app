@@ -9,15 +9,11 @@
 
 var myApp = angular.module('myApp', []);
 
-myApp.controller('mainController', ['$scope', '$timeout', '$log', function($scope, $timeout, $log){
+myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter){
 
-  $scope.name = 'Brendon';
-
-  //Run a function after a certain amount of time
-  $timeout(function(){
-
-    $scope.name = 'Everybody';
-
-  }, 2000);
+  $scope.handle = '';
+  $scope.lowercasehandle = function(){
+    return $filter('lowercase')($scope.handle);
+  };
 
 }]);

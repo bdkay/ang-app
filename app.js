@@ -18,4 +18,6 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
 
   //Common directives
 
+  $scope.characters = 5;
+
 }]);

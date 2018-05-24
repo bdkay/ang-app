@@ -24,4 +24,11 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
 
   });
 
+  setTimeout(function(){
+
+    $scope.handle = 'newtwitterhandle';
+    console.log("Scope changed!");
+
+  }, 3000);
+
 }]);

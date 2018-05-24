@@ -7,13 +7,19 @@
 // }]);
 
 
-var myApp = angular.module('myApp', []);
+// var myApp = angular.module('myApp', []);
+//
+// myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter){
+//
+//   $scope.handle = '';
+//   $scope.lowercasehandle = function(){
+//     return $filter('lowercase')($scope.handle);
+//   };
+//
+// }]);
 
-myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter){
+var tb = document.getElementById("name");
 
-  $scope.handle = '';
-  $scope.lowercasehandle = function(){
-    return $filter('lowercase')($scope.handle);
-  };
-
-}]);
+tb.addEventListener("keypress", function(event){
+  console.log("Pressed!");
+});

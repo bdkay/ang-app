@@ -15,6 +15,8 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
     alert("Clicked!");
   }
 
+  $scope.name = "John Doe";
+
   // $scope.handle = '';
   // $scope.lowercasehandle = function(){
   //   return $filter('lowercase')($scope.handle);

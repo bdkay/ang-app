@@ -24,13 +24,10 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
 
   });
 
-  setTimeout(function(){
+  $timeout(function(){
 
-    // Manually tell Angular that hey, what I'm about to do here should start a digest cycle
-    $scope.$apply(function(){
       $scope.handle = 'newtwitterhandle';
       console.log("Scope changed!");
-    });
 
   }, 3000);
 

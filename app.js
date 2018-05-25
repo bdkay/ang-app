@@ -16,21 +16,48 @@ myApp.config(function($routeProvider){
     templateUrl: 'pages/main.html',
     controller: 'mainController'
   })
-  .when('/second/:num', {
+  .when('/second', {
     templateUrl: 'pages/second.html',
     controller: 'secondController'
   })
 
 });
 
-myApp.controller('mainController', ['$scope', '$log', function($scope, $log){
+myApp.service('nameService', function(){
 
-  $scope.name = 'Main';
+  var self = this;
+  this.name = 'John Doe';
+  this.nameLength = function(){
+
+    return self.name.length;
+
+  }
+
+});
+
+myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope, $log, nameService){
+
+  $scope.name = nameService.name;
+
+  //Manually tell angular to watch this for changes
+  $scope.$watch('name', function(){
+    nameService.name = $scope.name;
+  });
+
+  $log.log(nameService.name);
+  $log.log(nameService.nameLength());
 
 }]);
 
-myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams){
+myApp.controller('secondController', ['$scope', '$log', '$routeParams', 'nameService', function($scope, $log, $routeParams, nameService){
 
-  $scope.num = $routeParams.num;
+  $scope.num = $routeParams.num || 1;
+
+  $scope.name = nameService.name;
+
+  //Manually tell angular to watch this for changes
+  $scope.$watch('name', function(){
+    nameService.name = $scope.name;
+  });
 
 }]);

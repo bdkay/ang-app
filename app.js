@@ -10,8 +10,9 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function($routeProvider){
+
   $routeProvider
-  .when('/', {
+  .when('/main', {
     templateUrl: 'pages/main.html',
     controller: 'mainController'
   })
@@ -24,6 +25,10 @@ myApp.config(function($routeProvider){
 
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log){
 
-  $log.info($location.path());
+
+}]);
+
+myApp.controller('secondController', ['$scope', '$log', function($scope, $log){
+
 
 }]);

@@ -17,7 +17,7 @@
   <!-- load angular via CDN -->
   <script src="//code.angularjs.org/1.5.6/angular.min.js"></script>
   <script src="app.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.js"></script>
 </head>
 <body>
 
@@ -29,7 +29,9 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+          <li><a href="#/main"><i class="fa fa-home"></i>Main</a></li>
+          <li><a href="#/second"><i class="fa fa-home"></i>Second</a></li>
         </ul>
       </div>
     </nav>
@@ -37,15 +39,7 @@
 
   <div class="container">
 
-    <div ng-controller="mainController">
-
-      <h1>{{ name }}</h1>
-
-    </div>
-
-    <div ng-controller="secondController">
-
-      <h1>{{ name }}</h1>
+    <div ng-view>
 
     </div>
 

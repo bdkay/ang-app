@@ -32,6 +32,17 @@ myApp.controller('mainController', ['$scope', '$filter', '$http', function($scop
 
     });
 
+  $scope.newRule = '';
+
+  $http.post('/api', { newRule: $scope.newRule })
+    .success(function(result){
+      $scope.rules = result;
+      $scope.newRule = '';
+    })
+    .error(function(data, status){
+      console.log(data);
+    })
+
   //
   // //Common directives
   //

@@ -9,18 +9,29 @@
 
 var myApp = angular.module('myApp', []);
 
-myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter){
+myApp.controller('mainController', ['$scope', '$filter', '$http', function($scope, $filter, $http){
 
-  $scope.alertClick = function(){
-    alert("Clicked!");
-  }
+  $scope.handle = '';
 
-  $scope.name = "John Doe";
+  $scope.lowercasehandle = function(){
+    return $filter('lowercase')($scope.handle);
+  };
 
-  // $scope.handle = '';
-  // $scope.lowercasehandle = function(){
-  //   return $filter('lowercase')($scope.handle);
-  // };
+  $scope.characters = 5;
+
+  //result == data that comes back
+  $http.get('/api')
+    .success(function(result){
+
+      $scope.rules = result;
+
+    })
+    .error(function(data, status){
+
+      console.log(data);
+
+    });
+
   //
   // //Common directives
   //

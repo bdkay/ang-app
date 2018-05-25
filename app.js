@@ -34,6 +34,7 @@ myApp.controller('mainController', ['$scope', '$filter', '$http', function($scop
 
   $scope.newRule = '';
 
+  //Passing JSON to api
   $http.post('/api', { newRule: $scope.newRule })
     .success(function(result){
       $scope.rules = result;

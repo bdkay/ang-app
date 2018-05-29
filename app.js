@@ -39,7 +39,14 @@ myApp.controller('mainController', ['$scope', '$log', 'nameService', function($s
 
   $scope.person = {
     name: 'Brendon Kuleck',
-    address: '2618 W. Chicago Ave, Chicago, IL'
+    city: 'Chicago',
+    state: 'Illinois',
+    zip: '60622',
+
+  }
+
+  $scope.formattedAddress = function(person){
+    return person.city + ', ' + person.state + ' ' + person.zip;
   }
 
 }]);
@@ -54,8 +61,10 @@ myApp.directive('searchResult', function() {
     templateUrl: 'directives/searchresult.html',
     replace: true,
     scope: {
-      //Equals sign = is two-way-binding
-      personObject: '='
+      //Equals sign: = is two-way-binding object
+      //Ampersand &: function
+      personObject: '=',
+      formattedAddressFunction: '&'
     }
   }
 });

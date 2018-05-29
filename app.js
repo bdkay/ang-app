@@ -81,6 +81,22 @@ myApp.directive('searchResult', function() {
       //Ampersand &: function
       personObject: '=',
       formattedAddressFunction: '&'
+    },
+    compile: function(elem, attrs){
+      console.log("Compiling. . .");
+      console.log(elem.html);
+
+      return {
+        //Pre and Post Linking
+        pre: function (scope, elements, attrs){
+          console.log('Pre-linking...');
+          console.log(elements);
+        },
+        post: function(scope, elements, attrs){
+          console.log('Post-linking...');
+          console.log(elements);
+        }
+      }
     }
   }
 });
